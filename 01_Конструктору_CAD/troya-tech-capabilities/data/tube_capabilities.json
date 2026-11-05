@@ -1,0 +1,509 @@
+{
+  "_meta": {
+    "updated": "2026-09-25",
+    "units": "мм, градусы, кг",
+    "status_legend": {
+      "passport": "из паспорта/договора/руководства",
+      "offer": "из КП/каталога производителя",
+      "drawing": "из листа «01 Радиусы гибов труб.jpg» (данные цеха)",
+      "os_only": "только название в ведомости ОС — характеристики не подтверждены",
+      "rule_of_thumb": "общее отраслевое правило, не из документов TROYA — подтвердить у технолога"
+    },
+    "source_registry": "source_fingerprints.json",
+    "source_binding_note": "Копии документов закреплены SHA256; номер ревизии не установлен. Характеристики на 2026-09-25 не изменялись."
+  },
+  "tube_laser": {
+    "id": "K0-65",
+    "model": "Bodor K0-65, 3000 Вт, зав. № 6500119888, 2024",
+    "status": "passport",
+    "round_d": [
+      6,
+      90
+    ],
+    "square_a": [
+      6,
+      90
+    ],
+    "rect_side": [
+      6,
+      90
+    ],
+    "section_max": "90×90 (квадрат/прямоуг.), Ø90 (круг); свыше Ø92 задний патрон зажимает изнутри",
+    "angle_channel_side_max": 60,
+    "angle_channel_side_max_catalog": 80,
+    "stock_length_max": 6500,
+    "stock_mass_max_kg": 70,
+    "linear_mass_max_kg_m": 11,
+    "min_tail": 40,
+    "positioning": 0.05,
+    "repositioning": 0.03,
+    "accuracy_class": "IT12 (положение и контур, сверх допусков заготовки)",
+    "roughness_0_6mm": "Ra 6,3–12,5 мкм",
+    "stock_requirements": [
+      "Прямолинейность трубы не хуже 1 мм/м (4 мм на 6 м), ГОСТ/GB T 6728",
+      "Допуск наружного размера ≤ ±0,5 % (не менее 0,2 мм)",
+      "Скручивание по длине < 0,02 % длины",
+      "Наружный сварной шов ≤ 0,3 мм (зачищен), внутренний грат ≤ 2 мм",
+      "Без сильной коррозии в зоне реза"
+    ],
+    "gases": {
+      "carbon_steel": "O2 ≥ 99,9 %",
+      "stainless": "N2 ≥ 99,99 %",
+      "air": "ISO 8573-1:2010 класс 2/4"
+    },
+    "nesting_gap_rule": "Зазор раскладки для фасонных/нестандартных профилей > 0,8 × толщины стенки",
+    "wall_max": null,
+    "wall_max_note": "Макс. толщина стенки по материалам в документах не указана — ЗАПРОСИТЬ таблицу режимов Bodor для 3 кВт",
+    "source_files": [
+      "Products Guide of KSeries-K-V3.5-ZN (1).pdf",
+      "Договор.pdf",
+      "технический паспорт Bodor K0-65-3000w  (1).pdf"
+    ]
+  },
+  "benders": [
+    {
+      "id": "CNC35ED",
+      "model": "Cansa Makina CNC-35/ED (Турция, 2023)",
+      "status": "passport",
+      "cnc": true,
+      "round_steel": {
+        "d": [
+          8,
+          35
+        ],
+        "s_max": 2.0
+      },
+      "round_stainless": {
+        "d_max": 32,
+        "s_max": 1.5
+      },
+      "profile_steel": {
+        "a": [
+          10,
+          30
+        ],
+        "s_max": 2.0
+      },
+      "clr": [
+        20,
+        100
+      ],
+      "clr_note": "R > 100 — раскаткой (rolling), подбор диаметра раскатки опытным путём",
+      "angle_max": 190,
+      "radii_per_part": "2 радиуса + раскатка (одно направление) или 1 правый + 1 левый + раскатка",
+      "directions": "правая и левая гибка",
+      "mandrel_length": 4000,
+      "mandrel_length_option": 6000,
+      "repeatability": {
+        "bend_deg": 0.1,
+        "rotation_deg": 0.1,
+        "feed_mm": 0.1
+      },
+      "import": "STEP → YBC, XYZ → YBC, DXF → YBC; 3D-симуляция",
+      "source_files": [
+        "CNC-35ED MANUAL USER.doc",
+        "CNC35 ED TROYA с переводом (1).pdf",
+        "Автоматический трубогибочный станок с ЧПУ CNC 35 ED Cansa Makina (Турция) (1).pdf"
+      ]
+    },
+    {
+      "id": "CSM-TMRE",
+      "model": "CSM CNC TM RE-RBE-P (для изделий Flexy)",
+      "status": "os_only",
+      "cnc": true,
+      "note": "Ёмкость, длина дорна — ЗАПРОСИТЬ. Известны радиусы Ø16 R38, Ø32 R85.",
+      "source_files": [
+        "ОС.xls"
+      ]
+    },
+    {
+      "id": "YT50CNC",
+      "model": "YT50CNC-4A-2S",
+      "status": "os_only",
+      "cnc": true,
+      "round_steel": {
+        "d": [
+          null,
+          50.8
+        ],
+        "s_max": null
+      },
+      "note": "Ёмкость Ø50 — по обозначению модели. Вероятный станок для оснастки Ø50,8; 40×20; 50×25 — ПОДТВЕРДИТЬ.",
+      "source_files": [
+        "ОС.xls"
+      ]
+    },
+    {
+      "id": "DM-38",
+      "model": "DM-38-DH (5 комплектов оснастки)",
+      "status": "os_only",
+      "cnc": false,
+      "round_steel": {
+        "d": [
+          null,
+          38
+        ],
+        "s_max": null
+      },
+      "note": "Ёмкость Ø38 — по обозначению модели.",
+      "source_files": [
+        "ОС.xls"
+      ]
+    },
+    {
+      "id": "Qiugang",
+      "model": "Трубогиб электромеханический Qiugang",
+      "status": "os_only",
+      "cnc": false,
+      "source_files": [
+        "ОС.xls"
+      ]
+    },
+    {
+      "id": "MECH",
+      "model": "Трубогиб механический",
+      "status": "os_only",
+      "cnc": false,
+      "source_files": [
+        "ОС.xls"
+      ]
+    }
+  ],
+  "tooling": [
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "round",
+      "a": 16,
+      "b": null,
+      "s": 1.2,
+      "clr": 50,
+      "L1_clamp": 60,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "round",
+      "a": 25,
+      "b": null,
+      "s": 1.2,
+      "clr": 75,
+      "L1_clamp": 60,
+      "L2_pressure": 280,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "round",
+      "a": 28,
+      "b": null,
+      "s": 1.2,
+      "clr": 70,
+      "L1_clamp": 60,
+      "L2_pressure": 265,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "round",
+      "a": 32,
+      "b": null,
+      "s": 1.2,
+      "clr": 85,
+      "L1_clamp": 75,
+      "L2_pressure": 300,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "round",
+      "a": 50.8,
+      "b": null,
+      "s": 1.2,
+      "clr": 100,
+      "L1_clamp": 90,
+      "L2_pressure": 325,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "square",
+      "a": 20,
+      "b": 20,
+      "s": 1.5,
+      "clr": 60,
+      "L1_clamp": 55,
+      "L2_pressure": 236,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "square",
+      "a": 25,
+      "b": 25,
+      "s": 1.5,
+      "clr": 70,
+      "L1_clamp": null,
+      "L2_pressure": 285,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "rect",
+      "a": 40,
+      "b": 20,
+      "s": 1.2,
+      "clr": 90,
+      "L1_clamp": 65,
+      "L2_pressure": 335,
+      "plane": "b",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "rect",
+      "a": 40,
+      "b": 20,
+      "s": 1.2,
+      "clr": 120,
+      "L1_clamp": 63,
+      "L2_pressure": 337,
+      "plane": "a",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (станок уточнить)",
+      "shape": "oval",
+      "a": 30,
+      "b": 15,
+      "s": null,
+      "clr": 80,
+      "L1_clamp": 65,
+      "L2_pressure": 180,
+      "plane": "b",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "oval",
+      "a": 40,
+      "b": 20,
+      "s": 1.2,
+      "clr": 90,
+      "L1_clamp": 65,
+      "L2_pressure": 335,
+      "plane": "b",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "oval",
+      "a": 40,
+      "b": 20,
+      "s": 1.2,
+      "clr": 120,
+      "L1_clamp": 85,
+      "L2_pressure": 330,
+      "plane": "a",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "oval",
+      "a": 50,
+      "b": 25,
+      "s": 1.2,
+      "clr": 90,
+      "L1_clamp": 85,
+      "L2_pressure": 300,
+      "plane": "b",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "парк (вероятно YT50CNC)",
+      "shape": "oval",
+      "a": 50,
+      "b": 25,
+      "s": 1.2,
+      "clr": 150,
+      "L1_clamp": 100,
+      "L2_pressure": 330,
+      "plane": "a",
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "CNC35ED",
+      "shape": "round",
+      "a": 16,
+      "b": null,
+      "s": null,
+      "clr": 40,
+      "L1_clamp": null,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "CNC35ED",
+      "shape": "round",
+      "a": 25,
+      "b": null,
+      "s": null,
+      "clr": 63,
+      "L1_clamp": null,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "CNC35ED",
+      "shape": "round",
+      "a": 28,
+      "b": null,
+      "s": null,
+      "clr": 70,
+      "L1_clamp": null,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "CNC35ED",
+      "shape": "round",
+      "a": 32,
+      "b": null,
+      "s": null,
+      "clr": 70,
+      "L1_clamp": null,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "CSM-TMRE",
+      "shape": "round",
+      "a": 16,
+      "b": null,
+      "s": null,
+      "clr": 38,
+      "L1_clamp": null,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    },
+    {
+      "machine": "CSM-TMRE",
+      "shape": "round",
+      "a": 32,
+      "b": null,
+      "s": null,
+      "clr": 85,
+      "L1_clamp": null,
+      "L2_pressure": null,
+      "plane": null,
+      "status": "drawing",
+      "source_files": [
+        "01 Радиусы гибов труб.jpg",
+        "ОС.xls"
+      ]
+    }
+  ],
+  "tooling_notes": [
+    "R — радиус гиба по оси (центру) трубы (CLR).",
+    "plane: 'a' — большая сторона профиля лежит в плоскости гиба (гиб «на ребро», R больше); 'b' — малая сторона в плоскости гиба (гиб «плашмя»). Трактовка условных знаков II/= и ()/⊂⊃ с листа цеха — подтвердить у технолога.",
+    "L1 — длина прижима (clamp die): прямой участок, который зажимается при гибе. Прямая между соседними гибами должна быть ≥ L1, иначе — нужен укороченный прижим/перехват/припуск под отрезку.",
+    "L2 — длина проката (давящей планки). Трактовка как минимального прямого хвоста за гибом без технологического припуска — подтвердить у технолога.",
+    "Оснастка из ОС: Ø16×1,2 RBH50; Ø25×1,2 RBH75; Ø28×1,2 RBH70; Ø32×1,2 RBH85; Ø50,8×1,2 RBH100; 20×20×1,5 RBH60; 25×25×1,5 RBH70; 40×20×1,2 R120/R90 (2 компл.); 50×25×1,2 R150/R90; + 1 комплект без описания; + поддержка трубы для гибки проталкиванием."
+  ],
+  "rules_of_thumb": [
+    "Новый радиус = новая оснастка (гибочный ролик, прижим, давящая планка, дорн). Конструктор выбирает R ТОЛЬКО из таблицы оснастки; иначе — согласование с технологом и заказ оснастки.",
+    "Все гибы одного профиля в детали — по возможности одним радиусом (CNC35ED допускает 2 радиуса + раскатка за установку).",
+    "Мин. прямая между гибами ≥ L1 (если L1 неизвестна — ориентир ≥ 1,5·D), концевые прямые ≥ L1 или технологический припуск с последующей отрезкой.",
+    "Отверстия/пазы, вырезанные лазером до гибки, — вне зоны гиба и не ближе ~1·D от точек касания дуги (иначе искажение); подтверждать пробным гибом.",
+    "Отношение R/D < 1,5 и тонкая стенка (D/s > 25) — только с дорном; проверить на образце.",
+    "Размеры гнутой детали задавать по XYZ точек пересечения осей или по YBC (L-R-B), а не только по развертке."
+  ]
+}

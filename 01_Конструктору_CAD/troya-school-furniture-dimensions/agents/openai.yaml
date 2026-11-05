@@ -1,0 +1,6 @@
+interface:
+  display_name: "Размеры учебной мебели TROYA"
+  short_description: "Проверка размеров и ростовых групп по нормативной базе"
+  default_prompt: "Используй $troya-school-furniture-dimensions для проверки размеров учебной мебели по нормативной базе TROYA."
+policy:
+  allow_implicit_invocation: true
