@@ -30,7 +30,6 @@ def toolkit_dir(rel):
     """Папка инструментария: ESKD_TOOLKIT, инструментарий самого скрипта, локальная копия установщика, общая папка NAS.
     Не нашлась — отказ с перечнем мест: молчаливый несуществующий путь всплыл бы позже невнятной ошибкой SolidWorks."""
     roots = [os.environ.get("ESKD_TOOLKIT", ""), own_toolkit(),
-             r"<WORK>\06_Справочники_и_шаблоны\03_SolidWorks_шаблоны_и_библиотеки",
              os.path.join(os.environ.get("LOCALAPPDATA", ""), "ESKD", "Toolkit") if os.environ.get("LOCALAPPDATA") else "",
              r"<СЕТЬ_КО>\_Библиотека проектирования\_инструменты_конструктора"]
     parts = rel.split("\\")

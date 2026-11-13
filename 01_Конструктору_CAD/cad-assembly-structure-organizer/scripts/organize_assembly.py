@@ -3,25 +3,17 @@ import hashlib
 import json
 import os
 import shutil
+import sys
 import time
 import uuid
 
+# Модуль подключения к SolidWorks лежит рядом: sw_connect.py, sw_preflight.py, cad_installation.py
+# (из solidworks-automation-skill, MIT — см. LICENSE_sw_connect.txt). Сам навык solidworks-automation не нужен.
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-_PACKAGE_ROOT = os.path.abspath(os.path.join(_SCRIPT_DIR, "..", ".."))
-_SW_CANDIDATES = [
-    os.environ.get("SW_AUTOMATION_DIR"),
-    os.path.join(_PACKAGE_ROOT, "solidworks-automation"),
-    r"<WORK>\99_Служебное\Навыки_агентов\01_Конструктору_CAD\solidworks-automation",
-]
-SW_SKILL_DIR = next((p for p in _SW_CANDIDATES if p and os.path.isdir(p)), None)
-if not SW_SKILL_DIR:
-    raise ImportError("SolidWorks automation dependency unavailable; set SW_AUTOMATION_DIR")
-if SW_SKILL_DIR not in os.sys.path:
-    os.sys.path.insert(0, SW_SKILL_DIR)
-if os.path.join(SW_SKILL_DIR, "scripts") not in os.sys.path:
-    os.sys.path.insert(0, os.path.join(SW_SKILL_DIR, "scripts"))
+if _SCRIPT_DIR not in sys.path:
+    sys.path.insert(0, _SCRIPT_DIR)
 
-from scripts.sw_connect import connect_solidworks, open_document, save_document, get_com_member
+from sw_connect import connect_solidworks, open_document, save_document, get_com_member
 
 CAD_EXTENSIONS = {".sldasm", ".sldprt", ".slddrw"}
 TEMP_EXTENSIONS = {".tmp"}

@@ -11,7 +11,7 @@ while ($own -and -not (Test-Path -LiteralPath (Join-Path $own '02_Шаблоны
 $rel = '03_Макросы_и_Плагины\Макросы_SW_ZTool\SWPlusMacro_v_2018_SP0.0\SpecEditor\SpecEditor.swp'
 $local = if ($env:LOCALAPPDATA) { Join-Path $env:LOCALAPPDATA 'ESKD\Toolkit' } else { $null }
 $roots = @($env:ESKD_TOOLKIT, $own,
-       '<WORK>\06_Справочники_и_шаблоны\03_SolidWorks_шаблоны_и_библиотеки', $local,
+       $local,
        '<СЕТЬ_КО>\_Библиотека проектирования\_инструменты_конструктора') | Where-Object { $_ }
 $m = $roots |
      ForEach-Object { Join-Path $_ $rel } | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1

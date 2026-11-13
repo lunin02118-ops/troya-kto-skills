@@ -39,7 +39,8 @@ EXT_IGS = {".igs", ".iges"}
 EXT_IMG = {".jpg", ".jpeg", ".png", ".heic", ".bmp", ".gif", ".webp", ".tif", ".tiff"}
 EXT_VIDEO = {".mp4", ".mov", ".avi", ".3gp"}
 EXT_D5 = {".drs", ".d5a", ".d5mesh", ".save"}
-EXT_BCAD = {".bdf", ".b3d", ".mcr"}
+# Корпус: Базис-Мебельщик (.b3d — модель, .ldw — чертёж, .bprj — проект) и bCAD старых заказов (.bdf, .mcr).
+EXT_BCAD = {".bdf", ".b3d", ".mcr", ".ldw", ".bprj"}
 EXT_CUT = {".cut2", ".cut"}
 EXT_CLIENT = {".dwg", ".ifc", ".pln", ".bpn"}
 EXT_ARCH = {".rar", ".zip", ".7z"}
@@ -48,7 +49,7 @@ TEMPLATE_DIRS = {"01_исходные данные", "документы", "фо
                  "03_на согласовании", "04_готово", "05_архив", "06_списание", "металл", "корпус",
                  "войлок", "_сопроводительная документация", "_кд", "для производства",
                  "01 кд в pdf", "02 чпу и раскрой", "лазер_лист", "труборез", "03 заявки в цеха",
-                 "бкад", "bcad", "схемы сборки"}
+                 "бкад", "bcad", "базис", "bazis", "схемы сборки"}
 BAD_CHARS = re.compile(r'[№«»,!+#<>:"/\\|?*]')
 # Файл, изменённый недавно, в план переноса не попадает: с ним могут работать прямо сейчас (ТЗ-03 §2 п. 5).
 FRESH_HOURS = 2
@@ -232,7 +233,7 @@ class Planner:
             return os.path.join(annul_dir(dst), name), "old", "старая версия"
 
         felt = "войлок" in rel_dir or "войлок" in lstem
-        corpus = bool(parts & {"корпус", "бкад", "bcad"}) or "bcad" in rel_dir
+        corpus = bool(parts & {"корпус", "бкад", "bcad", "базис", "bazis"}) or "bcad" in rel_dir
         metal = "металл" in rel_dir
 
         if re.match(r"^(сз\b|сз[\s_\-\d№]|служебн)", lstem) or "сводная" in lstem or "заявка на изг" in lstem:

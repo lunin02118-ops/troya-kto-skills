@@ -26,8 +26,9 @@
 | `troya-school-furniture-dimensions` | размеры школьной мебели по ГОСТ |
 | `troya-product-passport-system` | паспорта изделий ПС/РЭ: генератор docx, рисунки, проверка вёрстки |
 
-`cad-assembly-structure-organizer` использует навык `solidworks-automation` — это отдельный открытый проект
-(github.com/wzyn20051216/solidworks-automation-skill), его ставят из исходного репозитория.
+`cad-assembly-structure-organizer` подключается к SolidWorks через модуль из открытого проекта
+github.com/wzyn20051216/solidworks-automation-skill (MIT): три файла лежат в его папке `scripts`, лицензия —
+`LICENSE_sw_connect.txt` там же. Ставить сам проект не нужно.
 
 ## Как поставить
 
