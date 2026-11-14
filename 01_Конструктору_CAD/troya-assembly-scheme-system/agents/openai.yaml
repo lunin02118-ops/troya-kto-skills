@@ -1,0 +1,7 @@
+interface:
+  display_name: "Схемы сборки TROYA"
+  short_description: "Схемы сборки картинками в стиле NOMAD V: Composer, карточки, пиктограммы"
+  brand_color: "#265D4B"
+  default_prompt: "Используй $troya-assembly-scheme-system, чтобы сделать схему сборки изделия в стиле NOMAD V из готовой модели SOLIDWORKS."
+policy:
+  allow_implicit_invocation: true

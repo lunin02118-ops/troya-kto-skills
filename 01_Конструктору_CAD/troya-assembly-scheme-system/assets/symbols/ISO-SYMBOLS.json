@@ -1,0 +1,54 @@
+[
+  {
+    "standard": "ISO 7000",
+    "reference": "0001",
+    "title": "Limited rectilinear motion",
+    "asset": "symbols/ISO7000-0001.svg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ISO_7000_-_Ref-No_0001.svg",
+    "asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/ISO_7000_-_Ref-No_0001.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "asset_author": "Clemenspool",
+    "asset_license": "CC0-1.0",
+    "sha256": "c0557dcf9a854ef09fcaef4865becc7404cc521102bc42a3a59654360bcb8709",
+    "technical_source": "https://cdn.standards.iteh.ai/samples/35627/4a7b44a6708d4208925947b8937ea1e9/ISO-7000-2004.pdf",
+    "reference_status": "Identity and title checked against published ISO 7000:2004 preview. Independent SVG geometry inspected against that preview. No certification of the whole manual."
+  },
+  {
+    "standard": "ISO 7000",
+    "reference": "0004",
+    "title": "Direction of continuous rotation",
+    "asset": "symbols/ISO7000-0004.svg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ISO_7000_-_Ref-No_0004.svg",
+    "asset_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/ISO_7000_-_Ref-No_0004.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "asset_author": "Clemenspool",
+    "asset_license": "CC0-1.0",
+    "sha256": "0f1012efcc8e8ad207a70de38db5ca438f143faf3270a182c1091d93a1b84ab0",
+    "technical_source": "https://cdn.standards.iteh.ai/samples/35627/4a7b44a6708d4208925947b8937ea1e9/ISO-7000-2004.pdf",
+    "reference_status": "Identity and title checked against published ISO 7000:2004 preview. Independent SVG geometry inspected against that preview. No certification of the whole manual."
+  },
+  {
+    "standard": "ISO 7000",
+    "reference": "0005",
+    "title": "Rotation in two directions",
+    "asset": "symbols/ISO7000-0005.svg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ISO_7000_-_Ref-No_0005.svg",
+    "asset_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/ISO_7000_-_Ref-No_0005.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "asset_author": "Clemenspool",
+    "asset_license": "CC0-1.0",
+    "sha256": "8e60f028fb27ef8e73a8bdab0068f2cb39d2dfb14989ddb386cb709e430b79f7",
+    "technical_source": "https://cdn.standards.iteh.ai/samples/35627/4a7b44a6708d4208925947b8937ea1e9/ISO-7000-2004.pdf",
+    "reference_status": "Identity and title checked against published ISO 7000:2004 preview. Independent SVG geometry inspected against that preview. No certification of the whole manual."
+  },
+  {
+    "standard": "ISO 7000",
+    "reference": "0006",
+    "title": "Limited rotation",
+    "asset": "symbols/ISO7000-0006.svg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:ISO_7000_-_Ref-No_0006.svg",
+    "asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/ISO_7000_-_Ref-No_0006.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "asset_author": "Clemenspool",
+    "asset_license": "CC0-1.0",
+    "sha256": "91fde74d4757381aa3576b34e355813b5cbb75f727837e5cee98ee1ebf359d72",
+    "technical_source": "https://cdn.standards.iteh.ai/samples/35627/4a7b44a6708d4208925947b8937ea1e9/ISO-7000-2004.pdf",
+    "reference_status": "Identity and title checked against published ISO 7000:2004 preview. Independent SVG geometry inspected against that preview. No certification of the whole manual."
+  }
+]

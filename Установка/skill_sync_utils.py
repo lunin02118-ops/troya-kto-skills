@@ -1,4 +1,8 @@
-"""Verified copy-first skill installation; no CAD calls or client cache cleanup."""
+"""Verified copy-first skill installation; no CAD calls or client cache cleanup.
+
+The package may come from a SOLIDWORKS PDM vault view, where files are read-only: installed copies are made writable,
+and staging folders are made writable before removal.
+"""
 from pathlib import Path
 import hashlib
 import os
@@ -23,6 +27,28 @@ def reject_links(path):
 
 def ignored(name):
     return name in IGNORED or name.endswith('.pyc') or name.startswith('~$')
+
+
+def make_writable(root):
+    """Clear the read-only attribute in a whole tree (copytree carries it over from a PDM view)."""
+    root = Path(root)
+    for directory, dirs, files in os.walk(root, followlinks=False):
+        for name in dirs + files:
+            _writable(Path(directory)/name)
+    _writable(root)
+
+
+def _writable(path):
+    mode = path.lstat().st_mode
+    if not mode & stat.S_IWRITE:
+        os.chmod(path, mode | stat.S_IWRITE)
+
+
+def remove_tree(path):
+    """shutil.rmtree that does not fail on read-only files."""
+    path = reject_links(path)
+    make_writable(path)
+    shutil.rmtree(path)
 
 
 def manifest(root):
@@ -93,6 +119,7 @@ def synchronize(pairs, *, execute=False, conflict_policy='abort'):
             plan.update(stage=str(stage), backup=str(backup), had_target=dst.exists(), replaced=False)
             staged.append(plan)
             shutil.copytree(src, stage, ignore=lambda d,names:[n for n in names if ignored(n)])
+            make_writable(stage)
             if manifest(stage) != plan['source_manifest'] or manifest(src) != plan['source_manifest']:
                 raise RuntimeError(f'Source changed during staging: {src}')
         for plan in staged:
@@ -133,4 +160,4 @@ def synchronize(pairs, *, execute=False, conflict_policy='abort'):
                 reject_links(stage)
                 if stage.parent != Path(plan['target']).parent or not stage.name.startswith(f'.skill-stage-{run}-'):
                     raise RuntimeError('Invalid staging cleanup path')
-                shutil.rmtree(stage)
+                remove_tree(stage)

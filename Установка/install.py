@@ -11,6 +11,7 @@
 import argparse
 import sys
 from pathlib import Path
+sys.dont_write_bytecode = True   # пакет может лежать в виде хранилища PDM: не оставлять там __pycache__
 from skill_sync_utils import synchronize, difference, differs
 
 ROOT = Path(__file__).resolve().parent.parent
